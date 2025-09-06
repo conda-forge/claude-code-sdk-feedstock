@@ -30,6 +30,7 @@ requirements:
     - python ${{ python_min }}.*
   run:
     - anyio >=4.0.0
+    - mcp >=0.1.0
     - python >=${{ python_min }}
     - typing_extensions >=4.0.0
 
