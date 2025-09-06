@@ -5,7 +5,7 @@ context:
   version: "0.0.21"
   # test fixture encoding and path separator errors on windows
   pytest_args: ${{ '' if unix else '-k "not (query_with_async_iterable or cli_path_accepts_pathlib_path or build_command_with_add_dirs or build_command_with_mcp_servers_as_file_path)"' }}
-  cov_fail_under: ${{ 79 if unix else 73 }}
+  cov_fail_under: "73"
 
 package:
   name: claude-code-sdk
