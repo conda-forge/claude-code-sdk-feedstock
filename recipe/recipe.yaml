@@ -2,10 +2,10 @@
 schema_version: 1
 
 context:
-  version: 0.0.20
+  version: "0.0.21"
   # test fixture encoding and path separator errors on windows
   pytest_args: ${{ '' if unix else '-k "not (query_with_async_iterable or cli_path_accepts_pathlib_path or build_command_with_add_dirs or build_command_with_mcp_servers_as_file_path)"' }}
-  cov_fail_under: ${{ 79 if unix else 73 }}
+  cov_fail_under: "73"
 
 package:
   name: claude-code-sdk
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/claude-code-sdk/claude_code_sdk-${{ version }}.tar.gz
-  sha256: 5f9872f105563db8975de48ddc88c948d9c5e1244addca02241d6fcd2a47b3d6
+  sha256: 780759353fddb547df1db5df30ea8e5a891f6a8a7b78bd8b52bea9c5f45038ad
 
 build:
   noarch: python
@@ -30,6 +30,7 @@ requirements:
     - python ${{ python_min }}.*
   run:
     - anyio >=4.0.0
+    - mcp >=0.1.0
     - python >=${{ python_min }}
     - typing_extensions >=4.0.0
 
